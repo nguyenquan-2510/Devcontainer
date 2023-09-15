@@ -1,0 +1,18 @@
+version: "3"
+services:
+    qemu:
+        container_name: qemu
+        image: qemux/qemu-docker:latest
+        environment:
+            DISK_SIZE: "16G"
+            BOOT: "https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-standard-3.18.2-x86_64.iso"
+            CPU_CORES: "4"
+            RAM_SIZE: "2048M"
+        devices:
+            - /dev/kvm
+        cap_add:
+            - NET_ADMIN
+        ports:
+            - 22:22
+        restart: on-failure
+        stop_grace_period: 1m

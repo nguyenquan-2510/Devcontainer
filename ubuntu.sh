@@ -1,0 +1,1 @@
+docker run --privileged -v ${PWD}:/data -e VM_DISK_IMAGE=/data/disk-image -e ISO=https://releases.ubuntu.com/jammy/ubuntu-22.04.3-desktop-amd64.iso -p 16080:6080 -p 15900:5900 tianon/qemu
