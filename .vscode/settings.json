@@ -2,7 +2,8 @@
     "yaml.schemas": {
         "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": [
             "file:///workspaces/Devcontainer/jenkins.yaml",
-            "file:///workspaces/Devcontainer/qemu-compose.yaml"
+            "file:///workspaces/Devcontainer/qemu-compose.yaml",
+            "file:///workspaces/Devcontainer/chrome-compose.yaml"
         ]
     }
 }
