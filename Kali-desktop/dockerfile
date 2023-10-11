@@ -1,5 +1,5 @@
 # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-FROM ubuntu:latest
+FROM kalilinux/kali-rolling:latest
 
 ENV USER=root
 ENV PASSWORD=1234
@@ -14,9 +14,8 @@ RUN apt-get update -y && \
 	wget https://kumisystems.dl.sourceforge.net/project/virtualgl/2.6.5/virtualgl_2.6.5_amd64.deb && \
 	wget https://kumisystems.dl.sourceforge.net/project/turbovnc/2.2.7/turbovnc_2.2.7_amd64.deb
 
-# COPY FILES
-COPY xfce4.sh install.sh
-RUN bash install.sh
+# Install desktop
+RUN apt update -y && apt upgrade -y && apt install -y kali-linux-core kali-linux-xfce
 
 RUN	apt install -y ./virtualgl_*.deb && \
 	apt install -y ./turbovnc_*.deb && \
