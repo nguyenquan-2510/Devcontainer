@@ -11,9 +11,8 @@ RUN apt-get update -y && \
 	echo "tzdata tzdata/Zones/America select New York" >> ~/tx.txt && \
 	debconf-set-selections ~/tx.txt && \
 	apt-get install -y dbus-x11 abiword gnupg apt-transport-https wget software-properties-common ratpoison novnc websockify libxv1 libglu1-mesa xauth x11-utils xorg tightvncserver && \
-	wget https://sourceforge.net/projects/virtualgl/files/3.1/virtualgl_3.1_amd64.deb/download && \
-	wget https://sourceforge.net/projects/turbovnc/files/3.0.91%20%283.1%20beta2%29/turbovnc_3.0.91_amd64.deb/download
-
+	wget https://kumisystems.dl.sourceforge.net/project/virtualgl/2.6.5/virtualgl_2.6.5_amd64.deb && \
+	wget https://kumisystems.dl.sourceforge.net/project/turbovnc/2.2.7/turbovnc_2.2.7_amd64.deb
 # Install xfce desktop
 RUN apt update -y && apt upgrade -y && apt install -y kali-linux-core kali-desktop-xfce
 
