@@ -1,3 +1,6 @@
+# Install firefox ESR
+
+
 apt update -y && apt upgrade -y
 add-apt-repository ppa:mozillateam/ppa && \
 apt update -y && \
