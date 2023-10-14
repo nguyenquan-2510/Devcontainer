@@ -3,3 +3,5 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | 
 echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list && \
 apt-get update -y && \
 apt-get install -y sublime-text
+
+### Command: subl --no-sandbox

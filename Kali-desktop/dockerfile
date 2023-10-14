@@ -13,10 +13,9 @@ RUN apt-get update -y && \
 	apt-get install -y dbus-x11 abiword gnupg apt-transport-https wget software-properties-common ratpoison novnc websockify libxv1 libglu1-mesa xauth x11-utils xorg tightvncserver && \
 	wget https://kumisystems.dl.sourceforge.net/project/virtualgl/2.6.5/virtualgl_2.6.5_amd64.deb && \
 	wget https://kumisystems.dl.sourceforge.net/project/turbovnc/2.2.7/turbovnc_2.2.7_amd64.deb
-# Install xfce desktop
-RUN apt update -y && apt upgrade -y && apt install -y \
-	kali-desktop-xfce && \
-	apt-get purge -y --autoremove xfce4-power-manager
+# Install desktop
+COPY xfce.sh desktop.sh
+RUN bash desktop.sh
 
 RUN	apt install -y ./virtualgl_*.deb && \
 	apt install -y ./turbovnc_*.deb && \
@@ -24,7 +23,7 @@ RUN	apt install -y ./virtualgl_*.deb && \
 	mkdir ~/.dosbox && \
 	echo $PASSWORD | vncpasswd -f > ~/.vnc/passwd && \
 	chmod 0600 ~/.vnc/passwd && \
-	echo "set border 0" > ~/.ratpoisonrc  && \
+	echo "set border 1" > ~/.ratpoisonrc  && \
 	echo "exec startxfce4">> ~/.ratpoisonrc && \
 	openssl req -x509 -nodes -newkey rsa:2048 -keyout ~/novnc.pem -out ~/novnc.pem -days 3650 -subj "/C=US/ST=NY/L=NY/O=NY/OU=NY/CN=NY emailAddress=email@example.com"
 
