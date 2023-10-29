@@ -1,7 +1,7 @@
 # Xrdp desktop
-# Documentation: https://techspan.org/setup-kali-linux-via-docker-for-rdp-xfce-remote-control/
-docker pull kalilinux/kali-rolling
-docker run -p 3389:3389 -it --name linux-rdp kalilinux/kali-rolling /bin/bash
+# Base documentation: https://techspan.org/setup-kali-linux-via-docker-for-rdp-xfce-remote-control/
+docker pull parrotsec/core
+docker run -p 3389:3389 -it --name linux-rdp parrotsec/core /bin/bash
 ## Command in container:
 # su
 # apt update
