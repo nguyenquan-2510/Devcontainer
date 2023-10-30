@@ -1,7 +1,9 @@
+#!/bin/bash
 # Xrdp desktop
 # Base documentation: https://techspan.org/setup-kali-linux-via-docker-for-rdp-xfce-remote-control/
-docker pull parrotsec/core
-docker run -p 3389:3389 -it --name linux-rdp parrotsec/core /bin/bash
+read -p "Base image: " base
+docker pull $base
+docker run -p 3389:3389 -it --name linux-rdp $base /bin/bash
 ## Command in container:
 # su
 # apt update
