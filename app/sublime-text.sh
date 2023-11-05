@@ -7,4 +7,4 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 apt-get update -y && \
 apt-get install -y sublime-text
 
-### Command: subl --no-sandbox
+### Command: subl
