@@ -2,7 +2,7 @@
 FROM kalilinux/kali-rolling:latest
 
 ENV USER=root
-ENV PASSWORD=123456
+ENV PASSWORD=password
 ENV DEBIAN_FRONTEND=noninteractive 
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
 
