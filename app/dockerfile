@@ -18,7 +18,6 @@ COPY firefox-esr.sh install.sh
 RUN bash install.sh
 
 # Custom installation
-
 # End
 
 RUN	apt install -y ./virtualgl_*.deb && \
